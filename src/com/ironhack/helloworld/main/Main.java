@@ -1,13 +1,50 @@
 package com.ironhack.helloworld.main;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("probando github World :D");
 
-        System.out.println("Esto fue creado en new-feature");
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Please introduce your name");
+//        String name = scanner.nextLine();
+//
+//        System.out.println("Please introduce your age");
+//        int age = scanner.nextInt();
+//
+//        while(age < 0) {
+//            System.out.println("Please introduce a valid age");
+//            age = scanner.nextInt();
+//        }
+//
+//        System.out.println("Your name is " + name + " and you age is " + age);
+//        scanner.close();
 
+//        FileWriter fileWriter = new FileWriter("demo.txt", true);
+//
+//        fileWriter.write("Hello this is a line\n");
+//        fileWriter.write("This another line\n");
+//        fileWriter.close();
+
+        File file = new File("demo.txt");
+        Scanner scanner = new Scanner(file);
+        while(scanner.hasNext()) {
+            String line = scanner.nextLine();
+
+            System.out.println(line);
+        }
+
+        scanner.close();
+//        firstLessons();
+    }
+
+    private static void firstLessons() {
         // String int double boolean char Integer float byte Date long short
 //
 //        Primitivos

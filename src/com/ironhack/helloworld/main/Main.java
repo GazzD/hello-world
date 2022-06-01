@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Goodbye World :D");
+
+        System.out.println("Esto fue creado en new-feature");
+
         // String int double boolean char Integer float byte Date long short
 //
 //        Primitivos

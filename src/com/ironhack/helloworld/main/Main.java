@@ -1,39 +1,99 @@
 package com.ironhack.helloworld.main;
 
+import com.ironhack.helloworld.classes.*;
+import com.ironhack.helloworld.interfaces.CloudFeatures;
+import com.ironhack.helloworld.interfaces.Playable;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.*;
+import java.util.concurrent.Semaphore;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("probando github World :D");
+        System.out.println("Hello World :D");
 
-//        Scanner scanner = new Scanner(System.in);
-//
-//        System.out.println("Please introduce your name");
-//        String name = scanner.nextLine();
-//
-//        System.out.println("Please introduce your age");
-//        int age = scanner.nextInt();
-//
-//        while(age < 0) {
-//            System.out.println("Please introduce a valid age");
-//            age = scanner.nextInt();
-//        }
-//
-//        System.out.println("Your name is " + name + " and you age is " + age);
-//        scanner.close();
+        double revenueTask = 0.6;
+        double serviceFee = 0.1;
 
-//        FileWriter fileWriter = new FileWriter("demo.txt", true);
-//
-//        fileWriter.write("Hello this is a line\n");
-//        fileWriter.write("This another line\n");
-//        fileWriter.close();
+        double result2 = revenueTask + serviceFee;
+
+        System.out.println(result2);
+
+        System.out.println(revenueTask + serviceFee);
+
+//        BigDecimal bigDecimalRevenueTask = new BigDecimal("0.755");
+//        BigDecimal bigDecimalServiceFee = new BigDecimal("0.133");
+//        BigDecimal result = bigDecimalRevenueTask.add(bigDecimalServiceFee).setScale(2, RoundingMode.HALF_EVEN);
+
+        BigDecimal ten = new BigDecimal("10");
+        BigDecimal three = new BigDecimal("3");
+        BigDecimal result = ten.divide(three, 2, RoundingMode.HALF_UP);
+        System.out.println(result);
+
+//        interfacesAndAbstractClasses();
+//        scannerAndFileHandling();
+//        firstLessons();
+    }
+
+    public static void interfacesAndAbstractClasses() {
+        Employee employee = new Employee("Carmen", "carmen@supercarmen.com", 16);
+        employee = new Employee();
+        System.out.println(Calculator.add(4, 6));
+//        employee.setName("Laura");
+        Boss boss = new Boss("Mariela", "marual@amil.sdasd", 20, 30000, 15000);
+        System.out.println(boss.getSalaryPlus());
+        System.out.println(employee.getType());
+
+        Playable androidPlayer = new AndroidPlayer(0);
+        Playable applePlayer = new ApplePlayer(0);
+        androidPlayer.play();
+        applePlayer.play();
+
+//        Playable playable = new Playable();
+
+        List<String> names = new Stack<>();
+
+        names.add("Sofia");
+        names.get(0);
+
+        Shape triangle = new Triangle(10, 5);
+        Shape circle = new Circle(10);
+
+        System.out.println(triangle.calculateArea());
+        System.out.println(circle.calculateArea());
+
+//        Shape shape = new Shape(10, 5);
+    }
+
+    public static void scannerAndFileHandling() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please introduce your name");
+        String name = scanner.nextLine();
+
+        System.out.println("Please introduce your age");
+        int age = scanner.nextInt();
+
+        while(age < 0) {
+            System.out.println("Please introduce a valid age");
+            age = scanner.nextInt();
+        }
+
+        System.out.println("Your name is " + name + " and you age is " + age);
+        scanner.close();
+
+        FileWriter fileWriter = new FileWriter("demo.txt", true);
+
+        fileWriter.write("Hello this is a line\n");
+        fileWriter.write("This another line");
+        fileWriter.close();
 
         File file = new File("demo.txt");
-        Scanner scanner = new Scanner(file);
+        scanner = new Scanner(file);
         while(scanner.hasNext()) {
             String line = scanner.nextLine();
 
@@ -41,7 +101,6 @@ public class Main {
         }
 
         scanner.close();
-//        firstLessons();
     }
 
     private static void firstLessons() {

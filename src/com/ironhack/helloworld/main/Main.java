@@ -1,7 +1,6 @@
 package com.ironhack.helloworld.main;
 
 import com.ironhack.helloworld.classes.*;
-import com.ironhack.helloworld.interfaces.CloudFeatures;
 import com.ironhack.helloworld.interfaces.Playable;
 
 import java.io.File;
@@ -10,10 +9,26 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
-import java.util.concurrent.Semaphore;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
+
+
+
+
+//        interfacesAndAbstractClasses();
+//        scannerAndFileHandling();
+//        firstLessons();
+    }
+
+
+
+    public static void bigDecimal() {
+        Person person = new Person(1, "Víctor", "vcarodozf@fasdasd");
+        Person person2 = new Person(2, "Sarah", "vcarodozf@fasdasd");
+
+
         System.out.println("Hello World :D");
 
         double revenueTask = 0.6;
@@ -33,15 +48,11 @@ public class Main {
         BigDecimal three = new BigDecimal("3");
         BigDecimal result = ten.divide(three, 2, RoundingMode.HALF_UP);
         System.out.println(result);
-
-//        interfacesAndAbstractClasses();
-//        scannerAndFileHandling();
-//        firstLessons();
     }
 
     public static void interfacesAndAbstractClasses() {
-        Employee employee = new Employee("Carmen", "carmen@supercarmen.com", 16);
-        employee = new Employee();
+        Employee2 employee = new Employee2("Carmen", "carmen@supercarmen.c om", 16);
+        employee = new Employee2();
         System.out.println(Calculator.add(4, 6));
 //        employee.setName("Laura");
         Boss boss = new Boss("Mariela", "marual@amil.sdasd", 20, 30000, 15000);

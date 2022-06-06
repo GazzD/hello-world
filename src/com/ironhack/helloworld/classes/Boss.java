@@ -1,6 +1,6 @@
 package com.ironhack.helloworld.classes;
 
-public class Boss extends Employee {
+public class Boss extends Employee2 {
     private double salaryPlus;
 
     public Boss(String name, String email, int age, double salary, double salaryPlus) {

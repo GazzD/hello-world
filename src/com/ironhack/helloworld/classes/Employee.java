@@ -1,66 +1,40 @@
 package com.ironhack.helloworld.classes;
 
+import java.math.BigDecimal;
+
 public class Employee {
     private String name;
-    private String email;
-    private int age;
-    private double salary;
-    private Address address;
+    private BigDecimal salary;
+    private Employee supervisor;
 
-    private final String TYPE = "AWESOME!";
-
-    public Employee(String name, String email, int age, double salary) {
+    public Employee (String name, BigDecimal salary, Employee supervisor){
         this.name = name;
-        this.email = email;
-        this.age = age;
         this.salary = salary;
+        this.supervisor = supervisor;
     }
 
-    public Employee() {
-    }
-
-    public Employee(String name, String email, int age) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-    }
-
+    // getters, and setters omitted for brevity
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        if(name != "Carmen") {
-            this.name = name;
-        }
+        this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getType() {
-        return TYPE;
-    }
-
-    public double getSalary() {
+    public BigDecimal getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(BigDecimal salary) {
         this.salary = salary;
     }
 
+    public Employee getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(Employee supervisor) {
+        this.supervisor = supervisor;
+    }
 }
